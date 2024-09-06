@@ -18,20 +18,22 @@ class G1
         Console.WriteLine("********Parameterized and No argument constructor ***********");
         G1 avi1 = new G1();
         G1 avi2 = new G1(43.2);
+       
 
 
 
 
     }
-    public static int value(int a, int b)
-    {
-        Console.WriteLine("parameterized method");
-        Console.WriteLine(a + ", " + b);
-        return a;
-    }
+  
     public static void simple()
     {
         Console.WriteLine("No argument method");
+    }
+
+    public static int value(int a, int b)
+    {
+        Console.WriteLine(a + b);
+        return a;
     }
     //METHOD OVERLOADING
     public static int add(int a, int b)
@@ -57,5 +59,9 @@ class G1
     
    
 }
+
+
+
+
 
 
