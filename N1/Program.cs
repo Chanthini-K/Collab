@@ -41,18 +41,26 @@ class G1
         //    shapes.Drawn();
         //}
         //**************ABSTRACTION*****************
-        Vehicle car = new Cars();
-        Vehicle Bike = new Bike();
+        //Vehicle car = new Cars();
+        //Vehicle Bike = new Bike();
 
-        //calling abstract method
-        Console.WriteLine("*********Abstract method***********");
-        car.StartEngine();
-        Bike.StartEngine();
+        ////calling abstract method
+        //Console.WriteLine("*********Abstract method***********");
+        //car.StartEngine();
+        //Bike.StartEngine();
 
-        //calling regular method
-        Console.WriteLine("**********Regular method************");
-        car.DisplayType();
-        Bike.DisplayType();
+        ////calling regular method
+        //Console.WriteLine("**********Regular method************");
+        //car.DisplayType();
+        //Bike.DisplayType();
+
+        //**************INTERFACE*****************
+        Payment credit = new Creditcard();
+        Payment debit = new Debitcard();
+        credit.paypayment(100);
+        debit.paypayment(200);
+
+
 
     }
 
@@ -201,6 +209,31 @@ public class Bike : Vehicle
         Console.WriteLine("Bike engine started");
     }
 }
+
+//**************INTERFACE*****************
+public interface Payment
+{
+    void paypayment(float amount);
+
+}
+
+//Implementation of interface
+public class Creditcard : Payment 
+{
+    public void paypayment(float amount)
+    {
+        Console.WriteLine("Processing Credit card Payment : "+ amount);
+
+    }
+}
+public class Debitcard : Payment
+{
+    public void paypayment(float amount)
+    {
+        Console.WriteLine("Processing Debit card Payment : "+ amount);
+    }
+}
+
 
 
 
