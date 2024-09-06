@@ -2,7 +2,8 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Numerics;
-namespace basics;
+using System.Transactions;
+namespace N1;
 class G1
 {
     public static void Main(String[] args)
@@ -21,15 +22,37 @@ class G1
 
         //**************ENCAPSULATION*****************
 
-        person p= new person();
-        p.SetName("Chanthini");
-        p.SetAge(22);
+        //Person p = new Person();
+        //p.SetName("Chanthini");
+        //p.SetAge(22);
 
-        Console.WriteLine("name : "+p.GetName());
-        Console.WriteLine("Age : " + p.GetAge());
+        //Console.WriteLine("name : " + p.GetName());
+        //Console.WriteLine("Age : " + p.GetAge());
 
+        //**************INHERITANCE*****************
+        //Apple obj = new Apple();
+        // obj.DisplayApple();
 
+        //**************POLYMORPHISM*****************
+        //Shapes[] s= new Shapes[] {new Square(),new Circle()};
 
+        //foreach (Shapes shapes in s)
+        //{
+        //    shapes.Drawn();
+        //}
+        //**************ABSTRACTION*****************
+        Vehicle car = new Cars();
+        Vehicle Bike = new Bike();
+
+        //calling abstract method
+        Console.WriteLine("*********Abstract method***********");
+        car.StartEngine();
+        Bike.StartEngine();
+
+        //calling regular method
+        Console.WriteLine("**********Regular method************");
+        car.DisplayType();
+        Bike.DisplayType();
 
     }
 
@@ -68,7 +91,7 @@ class G1
 
 
 //**************ENCAPSULATION*****************
-public class person
+public class Person
 {
    
     //private fields -- Encapsulated data 
@@ -98,6 +121,92 @@ public class person
     }
 
 }
+
+//**************INHERITANCE*****************
+public class Fruit
+{
+    protected String Origin = "Kashmir";
+    protected double price = 100;
+
+    public void DisplayFruit()
+    {
+        Console.WriteLine("Fruit Origin: " + Origin);
+        Console.WriteLine("Fruit Price: "+price);
+    }
+}
+public class Apple:Fruit
+{
+    
+    String taste = "Sweet";
+    String color ="red";
+
+    public void DisplayApple()
+    {
+        Console.WriteLine("Apple Origin : " + Origin);
+        Console.WriteLine("Apple Price : " + price);
+        Console.WriteLine("Apple taset : " + taste);
+        Console.WriteLine("Apple Color : " + color);    
+
+    }
+
+}
+
+//**************POLYMORPHISM*****************
+public class Shapes
+{
+    public virtual void Drawn()
+    {
+        Console.WriteLine("Shape is drawn");
+    }
+}
+public class Square : Shapes
+{
+    public override void Drawn()
+    {
+       Console.WriteLine("Square is drawn");
+    }
+}
+public class Circle : Shapes 
+{
+    public override void Drawn()
+    {
+        Console.WriteLine("Circle  is drawn");
+    }
+}
+
+//**************ABSTRACTION*****************
+public abstract class Vehicle
+{
+    //abstarct method
+    public abstract void StartEngine();
+    public void DisplayType()
+    {
+        Console.WriteLine("This is a vehicle");
+    }
+
+
+}
+public class Cars : Vehicle
+{
+    public override void StartEngine()
+    {
+        
+       Console.WriteLine("Car engine started");
+    }
+}
+public class Bike : Vehicle
+{
+    public override void StartEngine()
+    {
+        Console.WriteLine("Bike engine started");
+    }
+}
+
+
+
+
+
+
 
 
 
