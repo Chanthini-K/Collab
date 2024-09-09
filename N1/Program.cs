@@ -31,7 +31,7 @@ class G1
 
         //**************INHERITANCE*****************
         //Apple obj = new Apple();
-        // obj.DisplayApple();
+        //obj.DisplayApple();
 
         //**************POLYMORPHISM*****************
         //Shapes[] s= new Shapes[] {new Square(),new Circle()};
@@ -55,10 +55,13 @@ class G1
         //Bike.DisplayType();
 
         //**************INTERFACE*****************
-        Payment credit = new Creditcard();
-        Payment debit = new Debitcard();
-        credit.paypayment(100);
-        debit.paypayment(200);
+        //Payment credit = new Creditcard();
+        //Payment debit = new Debitcard();
+        //credit.paypayment(100);
+        //debit.paypayment(200);
+
+        Level myVar = Level.Medium;
+        Console.WriteLine(myVar);
 
 
 
@@ -133,7 +136,7 @@ public class Person
 //**************INHERITANCE*****************
 public class Fruit
 {
-    protected String Origin = "Kashmir";
+   public String Origin = "Kashmir";
     protected double price = 100;
 
     public void DisplayFruit()
@@ -232,6 +235,13 @@ public class Debitcard : Payment
     {
         Console.WriteLine("Processing Debit card Payment : "+ amount);
     }
+}
+
+enum Level
+{
+    Low,
+    Medium,
+    High
 }
 
 
